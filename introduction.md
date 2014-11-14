@@ -24,18 +24,20 @@ We will use the the forward slash in file paths, the Unix convention for directo
 
 All file paths should be understood as relative to the application's root.
 
-This book will often include output from various programs. If what you see doesn't match exactly don't worry. You may encounter errors not documented in this book. I encourage you to search for the error message in various places such as [Google](google.com) or [Stack Overflow](http://stackoverflow.com) in order to help you solve the problem, which will lend itself greatly to your future development.
+This book will often include output from various programs. If what you see doesn't match exactly don't worry. You may encounter errors not documented in this book. I encourage you to search for the error message in various places such as [Google](http://google.com) or [Stack Overflow](http://stackoverflow.com) in order to help you solve the problem, which will lend itself greatly to your future development.
 
 This tutorial will cover testing your application. Output from a failed test will be indicated in RED, while output indicated a test passed will be in GREEN.
 
 Code will include syntax highlighting and previously written code will be collapsed as indicated using the elipses below:
 
+    ```node
     Code with elipses
     ...
     New code
+    ```
 
 ## About the author
-[Britton Broderick]() is the author of the [Sails.js Tutorial](). His prior experience includes...
+[Britton Broderick](www.linkedin.com/in/brittonbroderick/) is the author of the [Sails.js Tutorial](https://github.com/britton-jb/sailsjs-tutorial/). His prior experience includes going to school for business at [Utah Valley University](http://uvu.edu), realizing almost everything in business could be automated and that we wanted to be the one to do it. Adventures in learning to program followed.
 
 ## Aknowledgements
 
