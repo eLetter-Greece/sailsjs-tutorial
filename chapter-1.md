@@ -288,8 +288,105 @@ $ git branch
 
 In the above example the `branch` command lists all of the local branches and the asterisk lets you know which branch you're on at the moment. The `git checkout -b update-README` command creates a new branch and switches to it.
 
+After creating your new topic branch we'll edit the README.md to include a better description of your project, as show below:
+
+```
+# Sails.js Tutorial: "Hello world"
+
+I've completed the first exercise of the [*Sails.js Tutorial*](https://github.com/britton-jb/sailsjs-tutorial) by Britton Broderick.
+```
+
+Now we're going to commit the changes that we've made to our branch. We can do that using a shortcut on the git commit command as shown.
+
+```
+$ git commit -a -m "Update the README"
+[master 7f23826] Update the README
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+```
+
+In case you missed it the `-a` flag adds all files you'ved modified since the last commit and adds them to that commit. It's worth noting that this only adds existing files that have been modified, not newly added files to your commit.
+
+As an aside, when you're writing commit messages you should ensure that you always use the present tense. Because each git commit is a patch, it makes more sense to tell readers what each patch does, rather than what it did. For reference [here's an article on writing great commit messages](https://github.com/blog/926-shiny-new-commit-styles).
+
+Now that we've made the changes we wanted to make, we can merge this topic branch back into the master branch.
+
+```
+$ git checkout master
+Switched to branch 'master'
+$ git merge update-README
+Updating 7f23826..d679903
+Fast-forward
+ README.md | 4 ++--
+ 1 file changed, 2 insertion(+), 2 deletion(-)
+```
+
+You may have noticed that Git output usually includes random strings like `7f23826`. These are related to how Git represents repos. Your results will be different, but should be essentially the same despite that.
+
+As a matter of good house keeping once you've merged in changes from a branch you should delete the the branch.
+
+``` 
+$ git branch -d update-README
+Deleted branch update-README (was 7f23826).
+```
+
+Now that you've updated the `README` it's time to push the changes tosee the result. Now that you've done an intial commit you can omit `origin master`, and simply `git push`.
+
 ## Deploying to Heroku
+We're now going to take an action that at this stage would realistically be pointless, but is good exercise to learn how to deploy, and get your app into a *production* environment. The other thing to note here is that it prevents issues with differences between development and production to deploy early and often.
+
+Deploying a Sails app is easy. There are a number of different options available, but my favorite at this point is [Heroku](http://heroku.com/). Heroku is a platform built to make deploying web apps easy, as long as you're using Git.
+
+If you're using one of the cloud based development environments it's likely that Heroku's Toolbelt is already installed. If not you can find instructions to set it up [here](https://toolbelt.heroku.com/).
+
+To test if Heroku is installed run the command
+
+    $ heroku version
+
+Next sign up for an account at Heroku. Once that is taken care of you'll need to use the Heroku command line tools to login and use your SSH key.
+
+```
+$ heroku login
+$ heroku keys:add
+```
+
+Now that you're logged in you'll need to create a place in the Heroku servers for your app to live.
+
+```
+$ heroku create
+Creating rocky-oasis-2464... done, stack is cedar-14
+https://rocky-oasis-2464.herokuapp.com/ | git@heroku.com:rocky-oasis-2464.git
+Git remote heroku added
+```
+
+Now that you've added the place for your app to live you can push your app.
+
+    $ git push heroku master
+
+At this point you may see the different logging messages, and warnings. You can likely safely ignore these. Once you see that the app has been launched and deployed you can see your creation by going to the URL output when you ran `heroku create`.
+
+It will look exactly like it did running locally, but it's now in a live production environment.
+
+If you'd like to dive deeper into Heroku there are a number of other [commands avaiable](http://devcenter.heroku.com/heroku-command) via the Toolbelt.
 
 ## Conclusion
+At this point you have done a lot. It's my hope that I've explained things so far in such a way that you're not overwhemled. You should have learned the following, how to setup your development environment, version control with Git, and how to deploy an app to Heroku. In this next chapter we'll make a toy app that interacts with a database, which will give you a better feel of what's possible using Sails.
+
+If you'd like to share how far you've come, send a tweet or Facebook post with something like: 
+
+I'm learning Sails.js with the 
+
+#! I need a domain, and twitter stuff
+
+I also recommend signing up for our email list.
+
+### What you learned
+* Sails.js is a web development framwork written in JavaScript.
+* Installing Sails, generating an app, and editing the files is easy using your cloud development environment.
+* Sails comes with a command-line command called `sails` that can generate new applications and run your server locally.
+* We added a controller, controller action, and changed the root route to "hello world".
+* We have taken steps to prevent loss of our code and laid the foundation for others to be able to work with us on projects using Git and Github.
+* We've deployed our app to a production environment using Heroku.
 
 ## Practice!
+1. Change the content of the `hello` action to "hola, mundo!" instead of "hello world".
+2. Using the `hello` action add another action called `goodbye` that sends the text "goodbye, world!". Then edit the routes file to change the root route to the `goodbye` action, rather than the `hello`.
