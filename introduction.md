@@ -31,9 +31,9 @@ This tutorial will cover testing your application. Output from a failed test wil
 Code will include syntax highlighting and previously written code will be collapsed as indicated using the elipses below:
 
     ```node
-    Code with elipses
+    #! Code with elipses
     ...
-    New code
+    #! New code
     ```
 
 ## About the author
