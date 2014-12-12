@@ -308,23 +308,18 @@ Note that commit messages are used to tell your future self and others
 what exactly you did. As such more descriptive commit messages are
 always preferable to generic ones like "fixed bug". For commit's other
 than your intial commit I recommend that you use your system's editor,
-and follow the guidelines outlined below, borrowed and slightly modified
-from [Tim
+and follow the guidelines outlined below, borrowed from [Tim
 Pope](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
 and Torvald's [Linux commit
 guides](https://www.kernel.org/doc/Documentation/SubmittingPatches). 
-My chief omission here is not limiting each line to 72 characters or
-less, however because you'll be using Github or Bitbucket's web
-interface this particular piece of advice is less necessary, though
-still valuable to follow.
 
 ```
 Capitalized, short (~50 chars or less) summary
 
-A more detailed explanatory text, if necessary. The blank line
-separating the the summary from the body is critical if you have the
-body. Tools like rebase can get confused if you run the two lines
-together. 
+A more detailed explanatory text, if necessary. Wrap it to about 72
+characters or so.The blank line separating the the summary from the body
+is critical if you have the body. Tools like rebase can get confused if
+you run the two lines together. 
 
 Write your commit message in the imperative: "Fix bug" and not "Fixed
 bug" or "Fixes bug."  This convention matches up with commit messages
@@ -339,6 +334,11 @@ Further paragraphs come after blank lines.
 
 - Use a hanging indent
 ```
+
+The 72 characters per line limit is important because `git log` doesn't
+wrap text automatically for you, so in order to be able to read it in
+the future you must limit the character length to 72, barring pasted
+code, such as stack traces.
 
 Note that when you make a commit it is only recorded on your computer
 until you utilize the push command. This is called storing the commits
