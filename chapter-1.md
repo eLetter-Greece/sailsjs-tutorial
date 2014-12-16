@@ -65,8 +65,6 @@ $ sails new helloWorld
 info: Created a new Sails app `example`!
 ```
 
-#! do you need to npm install at this point to sails lift?
-
 ```
 $ cd helloWorld
 ```

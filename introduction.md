@@ -72,9 +72,15 @@ Code will include syntax highlighting and previously written code will
 be collapsed as indicated using the elipses below:
 
 ```node
-#! Code with elipses
-...
-#! New code
+module.exports = function() {
+  .
+  .
+  .
+  var hello = "Hello World";
+  .
+  .
+  .
+}
 ```
 
 ## About the author
