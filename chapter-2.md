@@ -10,10 +10,9 @@ Sails.
 
 In this chapter we're going to be building a very small verison of the
 app we'll be building throughout the rest of this tutorial. We'll be
-building an app for #! What type of app? theater, polling, voting in
-real time.
+building a real time discussion forum app.
  
-This example app will consist of users and #! what? 
+This example app will consist of users, threads, and comments.
 
 ## Planning the app
 
@@ -129,4 +128,6 @@ $ sails lift --verbose
 Our toy app will now be available on a local server.
 
 Now if we go to our app's root URL at / (read "slash") we get the same
-default Sails page, but by generating the Users api we've also created 
+default Sails page, but by generating the Users API we've also created a
+number of routes for manipulating the users resource. For example the
+endpoint representing all users is  

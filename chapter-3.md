@@ -2,7 +2,7 @@
 
 Now we begin the journey of building a Sails theater seating app that
 will act as the primary example app we build upon in the rest of this
-book. In the end the app will have users, #! what else? 
+book. In the end the app will have users, threads, and comments.
 However, we will begin with the creation of static pages.
 
 Although Sails is designed for creating database-backed real-time APIs
