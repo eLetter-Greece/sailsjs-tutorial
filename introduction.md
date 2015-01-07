@@ -1,24 +1,13 @@
 # Introduction
-Node.js has been sweeping the world of corporate development. Powering
-names like Paypal, Netflix, Walmart, and IBM, it's clearly a technology
-that allows for scalability, and offers the advantage of being able to
-code in one language on the client and server. However, in it's current
-state there is some question of how to best approach this new
-technology. The aim of this book is to introduce this technology and
-make it appraochable.
+Node.js and IO.js has been sweeping the world of corporate development. Powering names like Paypal, Netflix, Walmart, and IBM, it's clearly a technology that allows for scalability, and offers the advantage of being able to code in one language on the client and server. However, in it's current
+state there is some question of how to best approach this new technology. The aim of this book is to introduce this technology and make it appraochable.
 
-Sails.js is primarly designed for building real-time Application
-Programming Interfaces (APIs), and in this book we will explore Sails
-ability to make an API as well as views rendered on the server for the
-sake of simplicity.
+Sails.js is primarly designed for rapidly building real-time REST Application Programming Interfaces (APIs), and in this book we will explore Sails ability to make APIs as well server side view rendering - for simplicities sake.
 
 ## Who is this book for?
 This book was written to most approachable for those with some
 experience in JavaScript or server side code in any languages. However
-it's not meant to be for experts, or even those with some experience in
-server side coding, unless the desire is specifically to gain experience
-in the Sails framework. Despite all this, I'll make the best effort to
-make this book approachable to those with no experience in writing code
+it's not meant for experts, unless the desire is specifically to gain experience in the Sails framework. Despite all this, I'll make the best effort to make this book approachable to those with no experience in writing code
 of any kind.
 
 ## Prerequisities
@@ -27,12 +16,7 @@ approachable to any and all individuals, and as such no prerequsites are
 strictly required. However, that said it's recommended that readers have
 some experience in JavaScript, whether through
 [Codecademy](http://www.codecademy.com/), or
-[Eloquent JavaScript](http://eloquentjavascript.net/), however efforts
-will be made to make this optional. As well, experience with the command
-line and access to a Unix based development environment. Rather than
-embark on the journey of showing Windows users how to setup such an
-environment I recommend the use of a cloud based development
-environement like [Nitrous.io](http://nitrous.io) or
+[Eloquent JavaScript](http://eloquentjavascript.net/) (highly reccommended even to the seasoned programers), however efforts will be made to make this optional. As well, experience with the command line and access to a Unix based development environment. Rather than embark on the journey of showing Windows users how to setup such an environment I recommend the use of a cloud based development environement like [Nitrous.io](http://nitrous.io) or
 [Cloud9](http://c9.io).
 
 ## Conventions in this book
@@ -43,19 +27,20 @@ below:
     $ echo "I'm learning Sails.js"
 
 As discussed in the previous section I recommend that users in Windows
-environments use a cloud based IDE such as 
-[Nitrous.io](http://nitrous.io) or [Cloud9](http://c9.io).
+environments use a cloud based IDE such as [Nitrous.io](http://nitrous.io) or [Cloud9](http://c9.io). Others will hotly argue in favor of command line editors like emacs, vim or vi. While, if you visit a programing shop you are likely to see a range of IDE's like: [Sublime Text (http://www.sublimetext.com/)], [NetBeans (https://netbeans.org/)]  (older but it still works) and newer open source IDE's like [Atom (https://atom.io/)]  (hosted on [GitHub (https://github.com/atom)]).
 
 This is useful because Sails.js comes with commands that must be run at
 the command line.
 
 We will use the the forward slash in file paths, the Unix convention for
-directory separators.
+directory separators. 
 
     config/env/production.js
 
+*Windows Users: Sometimes you will get reverse slashes when copy-and-pasting - make sure to take them out - they usualy will do things that you don't intend on doing.* 
+
 All file paths should be understood as relative to the application's
-root.
+root. (Here's a [good article (http://www.linuxnix.com/2012/07/abslute-path-vs-relative-path-in-linuxunix.html)] on this - it also has some good Unix commands in there that you would be good to be fimiliar with.)
 
 This book will often include output from various programs. If what you
 see doesn't match exactly don't worry. You may encounter errors not 

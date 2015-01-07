@@ -261,7 +261,7 @@ $ git add -A
 
 This adds all files in the current directory, barring those that match
 patterns included in the `.gitignore` file, which specifies files you
-don't want to be included in teh repo. The `sails new` command
+don't want to be included in the repo. The `sails new` command
 automatically generates a `.gitignore` file with sane defaults for a
 Sails project, but you can add new ones if you'd like.
 
